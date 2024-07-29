@@ -1,0 +1,75 @@
+{%extends 'base.html'%}
+
+{%load crispy_forms_tags%}
+
+{%block content%}
+
+<body>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <h3> Upadte Your Record </h3>
+        <h6> Upadte Your  Asset Details Here </h6>
+    
+        <hr>
+        <br>
+        <form method = "POST" autocomplete="off">
+            {% csrf_token %}
+            {{form.description|as_crispy_field}}
+            <br>
+    
+            {{form.asset_code|as_crispy_field}}
+            <br>
+    
+            {{form.serial_number_t24|as_crispy_field}}
+            <br>
+    
+            {{form.nomenclature|as_crispy_field}}
+            <br>
+    
+            {{form.serial_number|as_crispy_field}}
+            <br>
+    
+            {{form.location|as_crispy_field}}
+            <br>
+    
+            {{form.price|as_crispy_field}}
+            <br>
+    
+            {{form.unit|as_crispy_field}}
+            <br>
+    
+            {{form.date_purchase|as_crispy_field}}
+            <br>
+    
+            {{form.supplier|as_crispy_field}}
+            <br>
+    
+            {{form.warranty|as_crispy_field}}
+            <br>
+    
+            {{form.comments|as_crispy_field}}
+            <br>
+    
+            
+            <br>
+    
+            <button type="submit" class="btn btn-primary " > Update Records &nbsp; <i class="fa fa-edit" aria-hidden="true"></i></button>
+            &nbsp;
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            
+        </form>
+        <br>
+    </div>
+
+       
+        
+    
+       
+</body>
+    
+
+
+
+
+
+{%endblock%}

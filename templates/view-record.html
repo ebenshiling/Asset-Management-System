@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+
+
+<div class="card">
+    <div class="card-body">
+
+        <p> <strong>Asset Name : </strong> {{record.description}} </p>
+       
+        <hr>
+
+        <p> <strong>Description : </strong> {{record.description}} </p>
+        <p> <strong>Asset Code : </strong> {{record.asset_code}} </p>
+        <p> <strong>Serial Number T24 : </strong> {{record.serial_number_t24}} </p>
+        <p> <strong>Nomenclature  : </strong> {{record.nomenclature}} </p>
+        <p> <strong>Serial Number : </strong> {{record.serial_number}} </p>
+        <p> <strong>Location : </strong> {{record.location}} </p>
+        <p> <strong>Date of Purchase : </strong> {{record.date_purchase}} </p>
+        <p> <strong>Price : </strong> {{record.price}} </p>
+        <p> <strong>Unit : </strong> {{record.unit}} </p>
+        <p> <strong>Supplier : </strong> {{record.supplier}} </p>
+        <p> <strong>Warranty: </strong> {{record.warranty}} </p>
+        <p> <strong>Comments : </strong> {{record.comments}} </p>
+        
+
+
+    </div>
+          <!-- Delete button with confirmation -->
+     
+    
+
+</div>
+
+<br>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+&nbsp;
+
+<a href="{% url 'update-record' record.id %}" class="btn btn-primary">Update Record &nbsp; <i class="fa fa-edit" aria-hidden="true"></i></a>
+&nbsp;
+
+<form id="delete-form" method="POST" action="{% url 'delete-record' record.pk %}" style="display:inline;">
+    {% csrf_token %}
+    <button type="button" class="btn btn-danger  btn-block p-2" onclick="confirmDelete()">Delete Record &nbsp; <i class="fa fa-trash" aria-hidden="true"></i></button>
+</form>
+
+
+
+{%endblock%}

@@ -1,0 +1,67 @@
+/* Base styles for a responsive layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15385b;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu a:hover {
+    background-color: #1e4b7a;
+}
+
+.navbar .toggle-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.form-layout{
+    border-radius: 15px;
+    width: 500px;
+}
+
+.message-text {
+    color: white;
+}
